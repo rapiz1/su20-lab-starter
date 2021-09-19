@@ -1,6 +1,7 @@
 #ifndef CS61C_VECTOR_H_
 #define CS61C_VECTOR_H_
-/* vector.h originally written by Jeremy Huddleston <jeremyhu@eecs.berkeley.edu> Sp2004
+/* vector.h originally written by Jeremy Huddleston <jeremyhu@eecs.berkeley.edu>
+ * Sp2004
  *
  * So it looks like you've decided to venture into the "other" files of this
  * lab.  Good.  C Header files (the .h extension) are a way of telling other .c
@@ -23,11 +24,12 @@
  * more than once which could've possibly resulted in an infinite loop of
  * file inclusions.
  *
- * First, we define the 'vector_t' datatype.  This next line says that a 'vector_t'
- * is the same as a 'struct vector_t'.  So anywhere in the code after this, we
- * can use 'vector_t *' to mean a pointer to a 'struct vector_t' (which is defined in
- * vector.c).  We can get away with doing this even though we don't know what a
- * struct vector is because all struct pointers have the same representation in memory.
+ * First, we define the 'vector_t' datatype.  This next line says that a
+ * 'vector_t' is the same as a 'struct vector_t'.  So anywhere in the code after
+ * this, we can use 'vector_t *' to mean a pointer to a 'struct vector_t' (which
+ * is defined in vector.c).  We can get away with doing this even though we
+ * don't know what a struct vector is because all struct pointers have the same
+ * representation in memory.
  */
 
 #include <sys/types.h>
@@ -45,11 +47,13 @@ vector_t *vector_new();
 
 /* Free up the memory allocated for the passed vector */
 /* YOUR CODE HERE */
+void vector_delete(vector_t *v);
 
 /* Return the value in the vector */
 int vector_get(vector_t *v, size_t loc);
 
 /* Set a value in the vector */
 /* YOUR CODE HERE */
+void vector_set(vector_t *v, size_t loc, int value);
 
 #endif
